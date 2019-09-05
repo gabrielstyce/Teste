@@ -1,0 +1,14 @@
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\bin\Debug\netcoreapp2.2\WideWorldImporters.API.deps.json
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\bin\Debug\netcoreapp2.2\WideWorldImporters.API.runtimeconfig.json
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\bin\Debug\netcoreapp2.2\WideWorldImporters.API.runtimeconfig.dev.json
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\bin\Debug\netcoreapp2.2\WideWorldImporters.API.dll
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\obj\Debug\netcoreapp2.2\WideWorldImporters.API.csprojAssemblyReference.cache
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\obj\Debug\netcoreapp2.2\WideWorldImporters.API.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\obj\Debug\netcoreapp2.2\WideWorldImporters.API.RazorAssemblyInfo.cache
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\obj\Debug\netcoreapp2.2\WideWorldImporters.API.RazorAssemblyInfo.cs
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\obj\Debug\netcoreapp2.2\WideWorldImporters.API.AssemblyInfoInputs.cache
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\obj\Debug\netcoreapp2.2\WideWorldImporters.API.AssemblyInfo.cs
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\obj\Debug\netcoreapp2.2\WideWorldImporters.API.RazorTargetAssemblyInfo.cache
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\bin\Debug\netcoreapp2.2\WideWorldImporters.API.pdb
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\obj\Debug\netcoreapp2.2\WideWorldImporters.API.dll
+C:\Users\Gabriel\source\repos\WideWorldImporters.API\WideWorldImporters.API\obj\Debug\netcoreapp2.2\WideWorldImporters.API.pdb
