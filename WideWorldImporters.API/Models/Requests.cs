@@ -11,28 +11,28 @@ namespace WideWorldImporters.API.Models
         [StringLength(200)]
         public string StockItemName { get; set; }
         [Required]
-        public int? SupplierID { get; set; }
+        public int? FornecedorID { get; set; }
         public int? ColorID { get; set; }
         [Required]
-        public int? UnitPackageID { get; set; }
+        public int? PacoteUnidadeID { get; set; }
         [Required]
-        public int? OuterPackageID { get; set; }
+        public int? EmbalagemID { get; set; }
         [StringLength(100)]
-        public string Brand { get; set; }
+        public string Marca { get; set; }
         [StringLength(40)]
-        public string Size { get; set; }
+        public string Tamanho { get; set; }
         [Required]
         public int? LeadTimeDays { get; set; }
         [Required]
         public int? QuantityPerOuter { get; set; }
         [Required]
-        public bool? IsChillerStock { get; set; }
+        public bool? Refrigeracao { get; set; }
         [StringLength(100)]
-        public string Barcode { get; set; }
+        public string CodBarras { get; set; }
         [Required]
-        public decimal? TaxRate { get; set; }
+        public decimal? Imposto { get; set; }
         [Required]
-        public decimal? UnitPrice { get; set; }
+        public decimal? PrecoUnidade { get; set; }
         public decimal? RecommendedRetailPrice { get; set; }
         [Required]
         public decimal? TypicalWeightPerUnit { get; set; }
@@ -44,8 +44,8 @@ namespace WideWorldImporters.API.Models
         public string SearchDetails { get; set; }
         [Required]
         public int? LastEditedBy { get; set; }
-        public DateTime? ValidFrom { get; set; }
-        public DateTime? ValidTo { get; set; }
+        public DateTime? DataCadastro { get; set; }
+        public DateTime? UltimaEdicao { get; set; }
     }
 
     public class PutStockItemsRequest
@@ -54,10 +54,10 @@ namespace WideWorldImporters.API.Models
         [StringLength(200)]
         public string StockItemName { get; set; }
         [Required]
-        public int? SupplierID { get; set; }
+        public int? FornecedorID { get; set; }
         public int? ColorID { get; set; }
         [Required]
-        public decimal? UnitPrice { get; set; }
+        public decimal? PrecoUnidade { get; set; }
     }
 
     public static class Extensions
@@ -67,18 +67,18 @@ namespace WideWorldImporters.API.Models
             {
                 StockItemID = request.StockItemID,
                 StockItemName = request.StockItemName,
-                SupplierID = request.SupplierID,
+                FornecedorID = request.FornecedorID,
                 ColorID = request.ColorID,
-                UnitPackageID = request.UnitPackageID,
-                OuterPackageID = request.OuterPackageID,
-                Brand = request.Brand,
-                Size = request.Size,
+                PacoteUnidadeID = request.PacoteUnidadeID,
+                EmbalagemID = request.EmbalagemID,
+                Marca = request.Marca,
+                Tamanho = request.Tamanho,
                 LeadTimeDays = request.LeadTimeDays,
                 QuantityPerOuter = request.QuantityPerOuter,
-                IsChillerStock = request.IsChillerStock,
-                Barcode = request.Barcode,
-                TaxRate = request.TaxRate,
-                UnitPrice = request.UnitPrice,
+                Refrigeracao = request.Refrigeracao,
+                CodBarras = request.CodBarras,
+                Imposto = request.Imposto,
+                PrecoUnidade = request.PrecoUnidade,
                 RecommendedRetailPrice = request.RecommendedRetailPrice,
                 TypicalWeightPerUnit = request.TypicalWeightPerUnit,
                 MarketingComments = request.MarketingComments,
@@ -87,8 +87,8 @@ namespace WideWorldImporters.API.Models
                 Tags = request.Tags,
                 SearchDetails = request.SearchDetails,
                 LastEditedBy = request.LastEditedBy,
-                ValidFrom = request.ValidFrom,
-                ValidTo = request.ValidTo
+                DataCadastro = request.DataCadastro,
+                UltimaEdicao = request.UltimaEdicao
             };
     }
 }

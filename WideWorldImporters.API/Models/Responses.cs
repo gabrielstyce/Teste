@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WideWorldImporters.API.Models
 {
+    #region Interfaces
     public interface IResponse
     {
         string Message { get; set; }
@@ -26,7 +27,7 @@ namespace WideWorldImporters.API.Models
         int ItemsCount { get; set; }
         double PageCount { get; }
     }
-
+    #endregion
     public class Response : IResponse
     {
         public string Message { get; set; }
@@ -48,5 +49,61 @@ namespace WideWorldImporters.API.Models
         public string Message { get; set; }
         public bool DidError { get; set; }
         public string ErrorMessage { get; set; }
+    }
+
+    public class PagedResponse<TModel> : IPagedResponse<TModel>
+    {
+        public string Message { get; set; }
+        public bool DidError { get; set; }
+        public string ErrorMessage { get; set; }
+        public IEnumerable<TModel> Model { get; set; }
+        public int PageSize { get; set; }
+        public int PageNumber { get; set; }
+        public int ItemsCount { get; set; }
+        public double PageCount
+            => ItemsCount < PageSize ? 1 : (int)(((double)ItemsCount / PageSize) + 1);
+    }
+
+    public static class ResponseExtensions
+    {
+        public static IActionResult ToHttpResponse(this IResponse response)
+        {
+            var status = response.DidError ? HttpStatusCode.InternalServerError : HttpStatusCode.OK;
+
+            return new ObjectResult(response)
+            {
+                StatusCode = (int)status
+            };
+        }
+
+        public static IActionResult ToHttpResponse<TModel>(this ISingleResponse<TModel> response)
+        {
+            var status = HttpStatusCode.OK;
+
+            if (response.DidError)
+                status = HttpStatusCode.InternalServerError;
+            else if (response.Model == null)
+                status = HttpStatusCode.NotFound;
+
+            return new ObjectResult(response)
+            {
+                StatusCode = (int)status
+            };
+        }
+
+        public static IActionResult ToHttpResponse<TModel>(this IListResponse<TModel> response)
+        {
+            var status = HttpStatusCode.OK;
+
+            if (response.DidError)
+                status = HttpStatusCode.InternalServerError;
+            else if (response.Model == null)
+                status = HttpStatusCode.NoContent;
+
+            return new ObjectResult(response)
+            {
+                StatusCode = (int)status
+            };
+        }
     }
 }

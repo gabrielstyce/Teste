@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WideWorldImporters.API</name>
+    </assembly>
+    <members>
+        <member name="M:WideWorldImporters.API.Controllers.WarehouseController.GetStockItemsAsync(System.Int32,System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retorna todos os produtos(['StockItems']) do banco.
+            </summary>
+            <param name="pageSize">Page size</param>
+            <param name="pageNumber">Page number</param>
+            <param name="lastEditedBy">Last edit by (user id)</param>
+            <param name="colorID">Color id</param>
+            <param name="embalagemID">Embalagem id</param>
+            <param name="fornecedorID">Fornecedor id</param>
+            <param name="precoUnidade">id Preco por unidade</param>
+            <returns>Retorna um stock items list</returns>
+            <response code="200">Retorna o stock items list</response>
+            <response code="500">Se tiver um internal server error</response>
+        </member>
+        <member name="M:WideWorldImporters.API.Controllers.WarehouseController.GetStockItemAsync(System.Int32)">
+            <summary>
+            Retorna um produto(['StockItem']) expecífico pelo ID.
+            </summary>
+            <param name="id">Stock item id</param>
+            <returns>Retorna um stock item</returns>
+            <response code="200">Retorna o produto</response>
+            <response code="404">Se o produto não existir</response>
+            <response code="500">Se houve um erro interno</response>
+        </member>
+        <member name="M:WideWorldImporters.API.Controllers.WarehouseController.PostStockItemAsync(WideWorldImporters.API.Models.PostStockItemsRequest)">
+            <summary>
+            Cria um novo produto(['StockItem']).
+            </summary>
+            <param name="request">Request model</param>
+            <returns>Retorna o novo stock item</returns>
+            <response code="200">Retorna o stock items list criado</response>
+            <response code="201">Resposta da criação do stock item</response>
+            <response code="400">Bad request</response>
+            <response code="500">Se houve um erro interno</response>
+        </member>
+        <member name="M:WideWorldImporters.API.Controllers.WarehouseController.PutStockItemAsync(System.Int32,WideWorldImporters.API.Models.PutStockItemsRequest)">
+            <summary>
+            Faz o update de um produto(['StockItem']) existente.
+            </summary>
+            <param name="id">Stock item ID</param>
+            <param name="request">Request model</param>
+            <returns>Retorna o update do stock item</returns>
+            <response code="200">Se o produto for atualizado com sucesso</response>
+            <response code="400">Bad request</response>
+            <response code="500">Se houve um erro interno</response>
+        </member>
+    </members>
+</doc>

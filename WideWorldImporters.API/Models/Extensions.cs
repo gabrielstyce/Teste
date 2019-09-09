@@ -9,7 +9,7 @@ namespace WideWorldImporters.API.Models
         public static IQueryable<StockItem> GetStockItems(this WideWorldImportersDbContext dbContext,
                                                           int pageSize = 10, int pageNumber = 1,
                                                           int? lastEditedBy = null, int? colorID = null,
-                                                          int? outerPackageID = null, int? supplierID = null, int? unitPackageID = null)
+                                                          int? embalagemID = null, int? fornecedorID = null, int? precoUnidade = null)
         {
             //Get quey do DbSet
             var query = dbContext.StockItems.AsQueryable();
@@ -23,16 +23,16 @@ namespace WideWorldImporters.API.Models
                 query = query.Where(item => item.ColorID == colorID);
 
             //Filtro do: 'OuterPackageID
-            if (outerPackageID.HasValue)
-                query = query.Where(item => item.OuterPackageID == outerPackageID);
+            if (embalagemID.HasValue)
+                query = query.Where(item => item.EmbalagemID == embalagemID);
 
             //Filtro do: 'SupplierID
-            if (supplierID.HasValue)
-                query = query.Where(item => item.SupplierID == supplierID);
+            if (fornecedorID.HasValue)
+                query = query.Where(item => item.FornecedorID == fornecedorID);
 
             //Filtro do: 'UnitPackageID'
-            if (unitPackageID.HasValue)
-                query = query.Where(item => item.UnitPackageID == unitPackageID);
+            if (precoUnidade.HasValue)
+                query = query.Where(item => item.PrecoUnidade == precoUnidade);
 
             return query;
         }
